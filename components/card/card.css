@@ -17,9 +17,6 @@
   margin: 0 auto 2rem auto;
   padding: 1rem;
 }
-.testclass {
-  color: var(--secondary);
-}
 
 .card__button-answer:hover {
   opacity: 0.75;
