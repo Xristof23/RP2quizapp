@@ -2,7 +2,6 @@
 const bookmarkButton = document.querySelector("[data-js=bookmark-button]");
 bookmarkButton.addEventListener("click", () => {
   bookmarkButton.classList.toggle("bookmark--active");
-  console.log("Bookmarked!");
 });
 
 const secondBookmarkButton = document.querySelector(
@@ -10,7 +9,6 @@ const secondBookmarkButton = document.querySelector(
 );
 secondBookmarkButton.addEventListener("click", () => {
   secondBookmarkButton.classList.toggle("bookmark--active");
-  console.log("Bookmarked 2nd card!");
 });
 
 const showAnswerButton = document.querySelector("[data-js=show-answer-button]");
@@ -23,3 +21,5 @@ showAnswerButton.addEventListener("click", () => {
     showAnswerButton.textContent = "Show answer";
   }
 });
+
+const submitButton = document.querySelector("[data-js=submit-button]");
