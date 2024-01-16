@@ -14,30 +14,31 @@
     <main>
       <br></br>
      
-      <form class="form">
+      <form class="form" data-js="form">
         <h2 class="form__header">Enter new question</h2>
         <p class="form__fields">
-          <label for="your-question">Your question:</label>
+          <label for="yourquestion">Your question:</label>
         </p>
         <textarea
-          name="your-question"
-          id="your-question"
+        required  
+        name="yourquestion"
+          id="yourquestion"
           cols="30"
           rows="10"
         ></textarea>
 
         <p class="form__fields">
-          <label for="your-answer">Your answer:</label>
+          <label for="youranswer">Your answer:</label>
         </p>
         <textarea
-          name="your-answer"
-          id="your-answer"
+        required
+          name="youranswer"
+          id="youranswer"
           cols="30"
           rows="10"
         ></textarea>
         <p class="form__fields">
-          <label for="tag">Tag:</label>
-          
+          <label for="tag">Tag:</label> 
         </p>
         <input 
         name="tag"
@@ -45,12 +46,14 @@
         />
         <button
           class="form__button-submit"
-          type="button"
+          type="submit"
           data-js="submit-button"
         >
           Submit!
         </button>
       </form>
+      
     </main>
+    <script src="form.js" defer></script>
   </body>
 </html>
