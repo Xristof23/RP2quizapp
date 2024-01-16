@@ -1,5 +1,8 @@
 const form = document.querySelector('[data-js="form"]');
 
+const qString = document.querySelector("[data-js=yourquestion]");
+console.log(qString.textContent);
+
 // const submitButton = document.querySelector("[data-js=submit-button]");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -19,9 +22,9 @@ form.addEventListener("submit", (event) => {
 
   const article = document.createElement("article");
   article.innerHTML = `<button class="card__button-answer"
-  type="button" data-js="show-answer-button">
-  Show answer
+  type="button" data-js="show-answer-button-n">Show answer
 </button>`;
+
   article.classList.add("card");
   newQuestion.append(article);
 
@@ -30,12 +33,22 @@ form.addEventListener("submit", (event) => {
   question.classList.add("card__question");
   question.textContent = yourQuestion;
 
-  //   const answerButton = document.createElement("button");
-
   const answer = document.createElement("p");
   article.append(answer);
-  answer.classList.add("card__answer--active");
+  answer.classList.add("card__answer");
   answer.textContent = formelements.youranswer.value;
+
+  const nShowAnswerButton = document.querySelector(
+    "[data-js=show-answer-button-n]"
+  );
+  nShowAnswerButton.addEventListener("click", () => {
+    answer.classList.toggle("card__answer--active");
+    if (nShowAnswerButton.textContent.includes("Show answer")) {
+      nShowAnswerButton.textContent = "Hide answer";
+    } else {
+      nShowAnswerButton.textContent = "Show answer";
+    }
+  });
 
   const bookmarkZone = document.createElement("div");
   article.append(bookmarkZone);
@@ -44,50 +57,21 @@ form.addEventListener("submit", (event) => {
 class="bookmark"
 aria-label="bookmark"
 type="button"
-data-js="bookmark-button">
+data-js="bookmark-button-n">
 *
 </button>`;
 
+  const nBookmarkButton = document.querySelector("[data-js=bookmark-button-n]");
+  nBookmarkButton.addEventListener("click", () => {
+    nBookmarkButton.classList.toggle("bookmark--active");
+  });
+
   const tagZone = document.createElement("ul");
   article.append(tagZone);
-  tagZone.classList.add("card__tag-list-item");
+  tagZone.classList.add("card__tag-list");
 
   const tagLi = document.createElement("li");
   tagZone.append(tagLi);
+  tagLi.classList.add("card__tag-list-item");
   tagLi.textContent = tag;
-
-  /*   newQuestion.innerHTML = `
-          <article class="card">
-            <h2 class="card__question">
-              ${yourQuestion}
-            </h2>
-            <button
-              class="card__button-answer"
-              type="button"
-              data-js="show-answer-button"
-            >
-              Show answer
-            </button>
-            <p class="card__answer--active" data-js="card-new-answer">
-              ${formelements.youranswer.value}
-            </p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">
-              #${formelements.tag.value}
-              </li>
-             
-            </ul>
-            <div class="card__button-bookmark">
-              <button
-                class="bookmark"
-                aria-label="bookmark"
-                type="button"
-                data-js="bookmark-button"
-              >
-                *
-              </button>
-            </div>
-          </article>`; */
-
-  console.log(newQuestion);
 });
