@@ -12,8 +12,11 @@
       <h1 class="header__title">Quiz-App</h1>
     </header>
     <main>
-      <form class="form__fields">
-        <p>
+      <br></br>
+     
+      <form class="form">
+        <h2 class="form__header">Enter new question</h2>
+        <p class="form__fields">
           <label for="your-question">Your question:</label>
         </p>
         <textarea
@@ -23,17 +26,23 @@
           rows="10"
         ></textarea>
 
-        <p>
+        <p class="form__fields">
           <label for="your-answer">Your answer:</label>
         </p>
         <textarea
           name="your-answer"
-          id="your-question"
+          id="your-answer"
           cols="30"
           rows="10"
         ></textarea>
-        <p>Tag:</p>
-        <input />
+        <p class="form__fields">
+          <label for="tag">Tag:</label>
+          
+        </p>
+        <input 
+        name="tag"
+        type="text" id="tag"
+        />
         <button
           class="form__button-submit"
           type="button"

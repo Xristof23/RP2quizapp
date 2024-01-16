@@ -1,13 +1,36 @@
+.form {
+  border: 1px solid var(--black);
+  padding: 2rem;
+  text-align: left;
+  position: relative;
+}
+
+
+.form__header {
+  color: var(--black)
+  margin: 1rem auto 2rem auto;
+  padding: 0.5rem 0.5rem;
+}
+
 .form__button-submit {
   background: var(--secondary);
   color: var(--white);
   border: none;
   display: block;
-  margin: 0 auto 2rem auto;
+  margin: 1rem auto 2rem auto;
   padding: 1rem;
 }
 
 .form__button-submit:hover {
   opacity: 0.75;
   cursor: pointer;
+}
+.form__fields {
+  color: var(--black)
+  margin: 0 1rem 2rem;
+  padding: 0.5rem 0.5rem;
+}
+
+.form {
+  padding: 1rem;
 }

@@ -15,7 +15,13 @@ const showAnswerButton = document.querySelector("[data-js=show-answer-button]");
 const firstCardAnswer = document.querySelector("[data-js=card-one-answer]");
 showAnswerButton.addEventListener("click", () => {
   firstCardAnswer.classList.toggle("card__answer--active");
-  if (firstCardAnswer.classList.contains("card__answer--active")) {
+  /*   if (firstCardAnswer.classList.contains("card__answer--active")) {
+    showAnswerButton.textContent = "Hide answer";
+  } else {
+    showAnswerButton.textContent = "Show answer";
+  } */
+
+  if (showAnswerButton.textContent === "Show answer") {
     showAnswerButton.textContent = "Hide answer";
   } else {
     showAnswerButton.textContent = "Show answer";
