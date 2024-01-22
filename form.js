@@ -1,7 +1,14 @@
 const form = document.querySelector('[data-js="form"]');
 
-const qString = document.querySelector("[data-js=yourquestion]");
-console.log(qString.textContent);
+const questionString = document.querySelector("[data-js=yourquestion]");
+
+questionString.addEventListener("input", () => {
+  const charactersLeft = 150 - questionString.value.length;
+  let questionStringDisplay = document.querySelector(
+    "[data-js=question-string-display]"
+  );
+  questionStringDisplay.textContent = `${charactersLeft} characters left`;
+});
 
 // const submitButton = document.querySelector("[data-js=submit-button]");
 form.addEventListener("submit", (event) => {
